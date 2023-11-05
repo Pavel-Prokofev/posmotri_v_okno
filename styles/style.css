@@ -15,7 +15,9 @@ html {
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
+  font-weight: 400;
   background-color: #1b1919;
+  display: flex;
 }
 
 h1,
@@ -35,4 +37,114 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.content {
+  margin: auto 30px;
+  block-size: 534px;
+  overflow: hidden;
+  display: flex;
+  column-gap: 30px;
+}
+
+.content__details {
+  inline-size: 399px;
+  block-size: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  row-gap: 26px;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.content__video-card {
+  display: flex;
+  justify-content: space-between;
+  inline-size: 100%;
+  block-size: 103px;
+}
+
+.content__video-card-description-container {
+  block-size: 103px;
+  max-inline-size: 200px;
+}
+
+.content__video-card-title {
+  max-inline-size: 100%;
+  font-family: Oswald;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-block-end: 6px;
+}
+
+.content__video-card-description {
+  overflow: hidden;
+  block-size: calc(100% - 36px);
+  line-height: 0.9;
+}
+
+.content__video-card-thumbnail {
+  inline-size: 194px;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.result {
+  inline-size: 711px;
+  align-self: flex-end;
+}
+
+.result__video-container {
+  position: relative;
+  inline-size: 100%;
+  block-size: 386px;
+  margin-block-end: 16px;
+}
+
+.result__video {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.search-form {
+  display: flex;
+  column-gap: 40px;
+  block-size: 54px;
+}
+
+.search-form__fieldset {}
+
+.title {
+  font-family: Oswald;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.94;
+  text-transform: uppercase;
 }
