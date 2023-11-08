@@ -42,7 +42,6 @@ ol {
 .content {
   margin: auto 30px;
   block-size: 534px;
-  overflow: hidden;
   display: flex;
   column-gap: 30px;
 }
@@ -65,7 +64,6 @@ ol {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
-  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -77,18 +75,19 @@ ol {
 .content__video-card {
   display: flex;
   justify-content: space-between;
-  inline-size: 100%;
+  inline-size: calc(100% - 4px);
   block-size: 103px;
+  margin: 2px;
 }
 
 .content__video-card-description-container {
   block-size: 103px;
-  max-inline-size: 200px;
+  max-inline-size: 194px;
 }
 
 .content__video-card-title {
   max-inline-size: 100%;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -102,7 +101,7 @@ ol {
 
 .content__video-card-description {
   overflow: hidden;
-  block-size: calc(100% - 36px);
+  inline-size: 194px;
   line-height: 0.9;
 }
 
@@ -135,10 +134,142 @@ ol {
 .search-form {
   display: flex;
   column-gap: 40px;
+  justify-content: space-between;
+  align-items: flex-end;
   block-size: 54px;
 }
 
-.search-form__fieldset {}
+.search-form .search-form__fieldset:first-child {
+  flex-grow: 1;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-block-end: 4px;
+}
+
+.search-form__checkbox-list {
+  padding-block-end: 3px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox {
+  background-color: #fff;
+  outline: 1px solid #1B1919;
+  outline-offset: -2px;
+}
+
+.search-form__label {
+  padding-block-end: 2px;
+}
+
+.search-form__pseudo-checkbox {
+  display: inline-block;
+  inline-size: 19px;
+  block-size: 19px;
+  border: 1px solid #fff;
+  vertical-align: middle;
+  cursor: pointer;
+  line-height: normal;
+}
+
+.search-form__label-text {
+  font-style: normal;
+  line-height: normal;
+  vertical-align: middle;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.search-form__checkbox-list .search-form__label:not(:last-child) {
+  margin-inline-end: 10px;
+}
+
+.search-form__textfield {
+  appearance: none;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  inline-size: 100%;
+}
+
+.content__card-link:hover .content__video-card-title,
+.content__card-link:hover .content__video-card-description,
+.search-form__label:hover .search-form__label-text,
+.button:hover {
+  text-decoration: underline;
+}
+
+.search-form__textfield:active {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+
+.button:active,
+.content__card-link:active > .content__video-card {
+  background: #545050;
+}
+
+.search-form__textfield:focus,
+.search-form__label:has(.search-form__checkbox:focus),
+.button:focus,
+.content__card-link:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible,
+.search-form__label:has(.search-form__checkbox:focus-visible),
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.content__card-link:focus-visible > .content__video-card {
+  outline: 1px solid #fff;
+}
+
+.search-form__textfield::placeholder {
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.search-form__submit-button {
+  inline-size: 194px;
+  block-size: 34px;
+}
+
+.more-button {
+  inline-size: calc(100% - 6px);
+  block-size: 34px;
+  margin: 3px;
+}
+
+.button {
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
 
 .title {
   font-family: Oswald;
@@ -147,4 +278,14 @@ ol {
   font-weight: 700;
   line-height: 0.94;
   text-transform: uppercase;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }

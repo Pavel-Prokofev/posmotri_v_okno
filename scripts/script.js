@@ -147,7 +147,7 @@ function appendCards({ baseUrl, dataArray, cardTmp, container }) {
     node.querySelector('a').setAttribute('id', el.id);
     node.querySelector('.content__video-card-title').textContent = el.city;
     node.querySelector('.content__video-card-description').textContent =
-      el.description + 'Вот, что видит кто-то из команды Практикума, когда не смотрит на код, а смотрит в окно. ';
+      el.description;
     node
       .querySelector('.content__video-card-thumbnail')
       .setAttribute('src', `${baseUrl}${el.thumbnail.url}`);
